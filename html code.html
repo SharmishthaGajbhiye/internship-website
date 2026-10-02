@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kiran Academy | Learn Today, Lead Tomorrow</title>
+
+    <meta name="description"
+          content="Kiran Academy - Quality education, expert faculty and career-focused learning.">
+
+    <style>
+
+        /* =========================================
+           KIRAN ACADEMY - COMPLETE CSS
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #202124;
+            background: #ffffff;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
+        }
+
+        :root {
+            --primary: #173b8f;
+            --primary-dark: #102b6b;
+            --secondary: #f5a623;
+            --secondary-dark: #dc8d00;
+            --dark: #172033;
+            --text: #555;
+            --light: #f6f8fc;
+            --white: #ffffff;
+            --border: #e5e7eb;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
+        }
+
+        .nav-container {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo b {
+            color: var(--secondary-dark);
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .navbar a {
+            color: #333;
+            font-weight: 600;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--primary);
+        }
+
+        .nav-btn {
+            background: var(--primary);
+            color: white !important;
+            padding: 11px 20px;
+            border-radius: 7px;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-dark);
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            background: linear-gradient(135deg, #f5f8ff, #fff8eb);
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .tagline {
+            display: inline-block;
+            color: var(--primary);
+            background: #e9efff;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 1.1;
+            color: var(--dark);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+            display: block;
+        }
+
+        .hero-text p {
+            font-size: 17px;
+            color: var(--text);
+            max-width: 580px;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 7px;
+            font-weight: 700;
+            border: 2px solid transparent;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .primary-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .secondary-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            height: 480px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .experience-card {
+            position: absolute;
+            left: -25px;
+            bottom: 30px;
+            background: white;
+            padding: 18px 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .experience-card strong {
+            color: var(--primary);
+            font-size: 30px;
+        }
+
+        .experience-card span {
+            color: var(--text);
+            font-size: 13px;
+        }
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .stats {
+            background: var(--primary);
+            padding: 35px 0;
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+        }
+
+        .stat {
+            border-right: 1px solid rgba(255,255,255,.2);
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h2 {
+            font-size: 32px;
+        }
+
+        .stat p {
+            opacity: .85;
+        }
+
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .light-section {
+            background: var(--light);
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-label {
+            color: var(--secondary-dark);
+            text-transform: uppercase;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2,
+        .section-content h2,
+        .contact-info h2 {
+            font-size: 38px;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-heading h2 span,
+        .section-content h2 span,
+        .contact-info h2 span {
+            color: var(--primary);
+        }
+
+        .section-heading p,
+        .section-content p {
+            color: var(--text);
+        }
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .section-image img {
+            height: 480px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .section-content p {
+            margin-bottom: 18px;
+        }
+
+        /* =========================================
+           FEATURES
+        ========================================= */
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: .3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .feature-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #edf2ff;
+            border-radius: 12px;
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .feature-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* =========================================
+           COURSES
+        ========================================= */
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: .3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .course-image img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 24px;
+        }
+
+        .course-tag {
+            color: var(--primary);
+            background: #edf2ff;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .course-content h3 {
+            margin: 15px 0 10px;
+            color: var(--dark);
+        }
+
+        .course-content p {
+            color: var(--text);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .course-content a {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .course-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .course-list li {
+            margin: 7px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .center-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* =========================================
+           FACULTY
+        ========================================= */
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .faculty-card {
+            text-align: center;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            padding-bottom: 20px;
+        }
+
+        .faculty-card img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .faculty-card h3 {
+            margin-top: 18px;
+            color: var(--dark);
+        }
+
+        .faculty-card p {
+            color: var(--primary);
+        }
+
+        /* =========================================
+           MISSION
+        ========================================= */
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .mission-card h3 {
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .mission-card p {
+            color: var(--text);
+        }
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info > p {
+            color: var(--text);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #edf2ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h3 {
+            color: var(--dark);
+        }
+
+        .contact-item p {
+            color: var(--text);
+        }
+
+        .contact-form-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+        }
+
+        .contact-form-card h2 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .contact-form-card > p {
+            color: var(--text);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 7px;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #d8dce5;
+            border-radius: 7px;
+            outline: none;
+            font-size: 15px;
+            transition: .3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(23,59,143,.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group small {
+            color: #e53935;
+            display: block;
+            margin-top: 4px;
+        }
+
+        .form-btn {
+            width: 100%;
+            border: none;
+            font-size: 16px;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 7px;
+            background: #e7f7ed;
+            color: #16833c;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary), #2758c7);
+            padding: 60px 0;
+            color: white;
+        }
+
+        .cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .cta p {
+            opacity: .9;
+        }
+
+        .white-btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .white-btn:hover {
+            background: #f0f0f0;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            background: #101827;
+            color: white;
+            padding-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .footer-about p {
+            color: #b9c0cc;
+            max-width: 350px;
+        }
+
+        .footer h3 {
+            margin-bottom: 18px;
+        }
+
+        .footer a {
+            color: #b9c0cc;
+            transition: .3s;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-grid > div:not(.footer-about) a {
+            display: block;
+            margin-bottom: 9px;
+        }
+
+        .footer-grid p {
+            color: #b9c0cc;
+            margin-bottom: 8px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.1);
+            text-align: center;
+            padding: 20px;
+            color: #9da6b4;
+            font-size: 14px;
+        }
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 992px) {
+
+            .navbar {
+                gap: 18px;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .courses-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .navbar {
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px;
+                box-shadow: var(--shadow);
+                display: none;
+            }
+
+            .navbar.show {
+                display: flex;
+            }
+
+            .navbar a {
+                padding: 10px;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                height: 350px;
+            }
+
+            .experience-card {
+                left: 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+
+            .stat {
+                border: none;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .two-column,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-image img {
+                height: 350px;
+            }
+
+            .courses-grid,
+            .faculty-grid,
+            .mission-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons .btn {
+                text-align: center;
+                width: 100%;
+            }
+
+            .section-heading h2,
+            .section-content h2,
+            .contact-info h2 {
+                font-size: 30px;
+            }
+
+            .contact-form-card {
+                padding: 22px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+    <div class="container nav-container">
+
+        <a href="#home" class="logo">
+
+            <span class="logo-icon">K</span>
+
+            <span>
+                Kiran <b>Academy</b>
+            </span>
+
+        </a>
+
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+
+        <nav class="navbar" id="navbar">
+
+            <a href="#home" class="active">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#faculty">
+                Faculty
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+            <a href="#contact" class="nav-btn">
+                Join Now
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="tagline">
+                🎓 Quality Education for a Better Future
+            </span>
+
+            <h1>
+                Learn Today,
+                <span>Lead Tomorrow.</span>
+            </h1>
+
+            <p>
+                Kiran Academy is dedicated to providing quality education,
+                practical knowledge and career-focused learning to help
+                students achieve their goals.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#courses" class="btn primary-btn">
+                    Explore Courses
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+                alt="Students studying together">
+
+            <div class="experience-card">
+
+                <strong>10+</strong>
+
+                <span>
+                    Years of Excellence
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     STATS
+========================================= -->
+
+<section class="stats">
+
+    <div class="container stats-grid">
+
+        <div class="stat">
+            <h2>5000+</h2>
+            <p>Students</p>
+        </div>
+
+        <div class="stat">
+            <h2>50+</h2>
+            <p>Expert Faculty</p>
+        </div>
+
+        <div class="stat">
+            <h2>25+</h2>
+            <p>Courses</p>
+        </div>
+
+        <div class="stat">
+            <h2>95%</h2>
+            <p>Success Rate</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ABOUT
+========================================= -->
+
+<section class="section" id="about">
+
+    <div class="container two-column">
+
+        <div class="section-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80"
+                alt="Teacher teaching students">
+
+        </div>
+
+
+        <div class="section-content">
+
+            <span class="section-label">
+                About Kiran Academy
+            </span>
+
+            <h2>
+                Building Knowledge,
+                <span>Creating Success</span>
+            </h2>
+
+            <p>
+                Kiran Academy is an educational institution focused on
+                providing students with a strong academic foundation and
+                practical skills.
+            </p>
+
+            <p>
+                Our experienced teachers use modern teaching methods,
+                interactive learning and regular assessments to help
+                students perform better.
+            </p>
+
+            <p>
+                We believe that every student has the potential to succeed.
+                Our learning environment encourages curiosity, confidence
+                and continuous improvement.
+            </p>
+
+            <a href="#contact" class="btn primary-btn">
+                Join Kiran Academy
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WHY CHOOSE US
+========================================= -->
+
+<section class="section light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Why Choose Us
+            </span>
+
+            <h2>
+                Learning Designed for
+                <span>Success</span>
+            </h2>
+
+            <p>
+                We combine experienced faculty, modern teaching methods
+                and student-focused learning.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    👨‍🏫
+                </div>
+
+                <h3>
+                    Expert Faculty
+                </h3>
+
+                <p>
+                    Learn from experienced and dedicated teachers
+                    who guide students throughout their academic journey.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📚
+                </div>
+
+                <h3>
+                    Quality Study Material
+                </h3>
+
+                <p>
+                    Get structured notes, practice questions,
+                    assignments and useful learning resources.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Modern Learning
+                </h3>
+
+                <p>
+                    Interactive classes and digital learning resources
+                    make education simple and engaging.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Excellent Results
+                </h3>
+
+                <p>
+                    Regular tests, assessments and personalized
+                    guidance help students achieve better results.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     COURSES
+========================================= -->
+
+<section class="section" id="courses">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Our Courses
+            </span>
+
+            <h2>
+                Explore Our
+                <span>Popular Courses</span>
+            </h2>
+
+            <p>
+                Choose the learning program that matches your
+                academic and career goals.
+            </p>
+
+        </div>
+
+
+        <div class="courses-grid">
+
+
+            <!-- COURSE 1 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80"
+                        alt="School education">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-tag">
+                        Academic
+                    </span>
+
+                    <h3>
+                        School Education
+                    </h3>
+
+                    <p>
+                        Complete academic support for school students
+                        with regular classes and assessments.
+                    </p>
+
+                    <ul class="course-list">
+
+                        <li>✓ Concept-based learning</li>
+                        <li>✓ Regular tests</li>
+                        <li>✓ Study material</li>
+
+                    </ul>
+
+                    <a href="#contact">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 2 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=700&q=80"
+                        alt="College education">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-tag">
+                        College
+                    </span>
+
+                    <h3>
+                        College Programs
+                    </h3>
+
+                    <p>
+                        Subject-focused programs designed to support
+                        college students in their academic journey.
+                    </p>
+
+                    <ul class="course-list">
+
+                        <li>✓ Subject guidance</li>
+                        <li>✓ Practical learning</li>
+                        <li>✓ Exam preparation</li>
+
+                    </ul>
+
+                    <a href="#contact">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 3 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=700&q=80"
+                        alt="Computer programming">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-tag">
+                        Technology
+                    </span>
+
+                    <h3>
+                        Computer Programming
+                    </h3>
+
+                    <p>
+                        Learn programming fundamentals and modern
+                        development technologies.
+                    </p>
+
+                    <ul class="course-list">
+
+                        <li>✓ HTML & CSS</li>
+                        <li>✓ JavaScript</li>
+                        <li>✓ Java & Python</li>
+
+                    </ul>
+
+                    <a href="#contact">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 4 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80"
+                        alt="Competitive exam preparation">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-tag">
+                        Competitive
+                    </span>
+
+                    <h3>
+                        Competitive Exams
+                    </h3>
+
+                    <p>
+                        Structured preparation for various competitive
+                        examinations.
+                    </p>
+
+                    <ul class="course-list">
+
+                        <li>✓ Mock tests</li>
+                        <li>✓ Practice papers</li>
+                        <li>✓ Expert guidance</li>
+
+                    </ul>
+
+                    <a href="#contact">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 5 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=80"
+                        alt="Skill development">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-tag">
+                        Skills
+                    </span>
+
+                    <h3>
+                        Skill Development
+                    </h3>
+
+                    <p>
+                        Develop communication, presentation and
+                        professional skills.
+                    </p>
+
+                    <ul class="course-list">
+
+                        <li>✓ Communication</li>
+                        <li>✓ Presentation skills</li>
+                        <li>✓ Career guidance</li>
+
+                    </ul>
+
+                    <a href="#contact">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COURSE 6 -->
+
+            <div class="course-card">
+
+                <div class="course-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=700&q=80"
+                        alt="Career development">
+
+                </div>
+
+                <div class="course-content">
+
+                    <span class="course-tag">
+                        Career
+                    </span>
+
+                    <h3>
+                        Career Development
+                    </h3>
+
+                    <p>
+                        Career-oriented guidance to help students
+                        prepare for future opportunities.
+                    </p>
+
+                    <ul class="course-list">
+
+                        <li>✓ Career planning</li>
+                        <li>✓ Interview preparation</li>
+                        <li>✓ Professional guidance</li>
+
+                    </ul>
+
+                    <a href="#contact">
+                        Enquire Now →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     MISSION & VISION
+========================================= -->
+
+<section class="section light-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Our Purpose
+            </span>
+
+            <h2>
+                Mission, Vision & Values
+            </h2>
+
+        </div>
+
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+
+                <div class="feature-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Our Mission
+                </h3>
+
+                <p>
+                    To provide accessible, quality and practical education
+                    that helps students develop knowledge, confidence
+                    and professional skills.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="feature-icon">
+                    🔭
+                </div>
+
+                <h3>
+                    Our Vision
+                </h3>
+
+                <p>
+                    To become a trusted educational institution that
+                    prepares students for academic excellence and
+                    future career opportunities.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="feature-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Our Values
+                </h3>
+
+                <p>
+                    We value knowledge, integrity, innovation, discipline,
+                    teamwork and continuous improvement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FACULTY
+========================================= -->
+
+<section class="section" id="faculty">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                Our Faculty
+            </span>
+
+            <h2>
+                Meet Our
+                <span>Expert Teachers</span>
+            </h2>
+
+            <p>
+                Our faculty members are dedicated to helping students
+                understand concepts and achieve their goals.
+            </p>
+
+        </div>
+
+
+        <div class="faculty-grid">
+
+            <div class="faculty-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                    alt="Female teacher">
+
+                <h3>
+                    Dr. Priya Sharma
+                </h3>
+
+                <p>
+                    Academic Director
+                </p>
+
+            </div>
+
+
+            <div class="faculty-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80"
+                    alt="Male teacher">
+
+                <h3>
+                    Prof. Rahul Verma
+                </h3>
+
+                <p>
+                    Computer Science Faculty
+                </p>
+
+            </div>
+
+
+            <div class="faculty-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?auto=format&fit=crop&w=600&q=80"
+                    alt="Teacher">
+
+                <h3>
+                    Ms. Anjali Patil
+                </h3>
+
+                <p>
+                    Competitive Exam Faculty
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta">
+
+    <div class="container cta-content">
+
+        <div>
+
+            <h2>
+                Ready to Start Your Learning Journey?
+            </h2>
+
+            <p>
+                Join Kiran Academy and take the next step toward your goals.
+            </p>
+
+        </div>
+
+        <a href="#contact" class="btn white-btn">
+            Enquire Now
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     CONTACT
+========================================= -->
+
+<section class="section" id="contact">
+
+    <div class="container contact-grid">
+
+
+        <!-- CONTACT INFORMATION -->
+
+        <div class="contact-info">
+
+            <span class="section-label">
+                Get In Touch
+            </span>
+
+            <h2>
+                Let's Start a
+                <span>Conversation</span>
+            </h2>
+
+            <p>
+                Contact us for admission details, course information,
+                fee structure or any other queries.
+            </p>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h3>
+                        Address
+                    </h3>
+
+                    <p>
+                        Kiran Academy,<br>
+                        Pune, Maharashtra, India
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <div>
+
+                    <h3>
+                        Phone
+                    </h3>
+
+                    <p>
+                        +91 98765 43210
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">
+                    ✉️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        info@kiranacademy.com
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+
+        <div class="contact-form-card">
+
+            <h2>
+                Admission Enquiry
+            </h2>
+
+            <p>
+                Fill out the form and our team will contact you.
+            </p>
+
+
+            <form id="contactForm">
+
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your name">
+
+                    <small id="nameError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email">
+
+                    <small id="emailError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter 10 digit phone number">
+
+                    <small id="phoneError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="course">
+                        Select Course
+                    </label>
+
+                    <select id="course">
+
+                        <option value="">
+                            Select a course
+                        </option>
+
+                        <option>
+                            School Education
+                        </option>
+
+                        <option>
+                            College Programs
+                        </option>
+
+                        <option>
+                            Computer Programming
+                        </option>
+
+                        <option>
+                            Competitive Exams
+                        </option>
+
+                        <option>
+                            Skill Development
+                        </option>
+
+                        <option>
+                            Career Development
+                        </option>
+
+                    </select>
+
+                    <small id="courseError"></small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Message
+                    </label>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Write your message"></textarea>
+
+                    <small id="messageError"></small>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn primary-btn form-btn">
+
+                    Submit Enquiry
+
+                </button>
+
+
+                <div
+                    id="successMessage"
+                    class="success-message">
+
+                    Your enquiry has been submitted successfully!
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-about">
+
+            <a href="#home" class="footer-logo">
+
+                <span class="logo-icon">
+                    K
+                </span>
+
+                Kiran Academy
+
+            </a>
+
+            <p>
+                Empowering students with knowledge, skills and confidence
+                for a brighter future.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#courses">
+                Courses
+            </a>
+
+            <a href="#faculty">
+                Faculty
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Courses
+            </h3>
+
+            <a href="#courses">
+                Academic Programs
+            </a>
+
+            <a href="#courses">
+                Computer Courses
+            </a>
+
+            <a href="#courses">
+                Competitive Exams
+            </a>
+
+            <a href="#courses">
+                Skill Development
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 Pune, Maharashtra
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+            <p>
+                ✉️ info@kiranacademy.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <p>
+            © <span id="year"></span>
+            Kiran Academy. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+
+    const menuBtn =
+        document.getElementById("menuBtn");
+
+    const navbar =
+        document.getElementById("navbar");
+
+
+    menuBtn.addEventListener("click", function () {
+
+        navbar.classList.toggle("show");
+
+        if (navbar.classList.contains("show")) {
+
+            menuBtn.innerHTML = "✕";
+
+        } else {
+
+            menuBtn.innerHTML = "☰";
+
+        }
+
+    });
+
+
+    /* Close menu after clicking */
+
+    const navLinks =
+        document.querySelectorAll(".navbar a");
+
+
+    navLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navbar.classList.remove("show");
+
+            menuBtn.innerHTML = "☰";
+
+        });
+
+    });
+
+
+    /* =========================================
+       CONTACT FORM VALIDATION
+    ========================================= */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name");
+
+        const email =
+            document.getElementById("email");
+
+        const phone =
+            document.getElementById("phone");
+
+        const course =
+            document.getElementById("course");
+
+        const message =
+            document.getElementById("message");
+
+
+        const nameError =
+            document.getElementById("nameError");
+
+        const emailError =
+            document.getElementById("emailError");
+
+        const phoneError =
+            document.getElementById("phoneError");
+
+        const courseError =
+            document.getElementById("courseError");
+
+        const messageError =
+            document.getElementById("messageError");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+
+        /* Clear errors */
+
+        nameError.textContent = "";
+        emailError.textContent = "";
+        phoneError.textContent = "";
+        courseError.textContent = "";
+        messageError.textContent = "";
+
+        successMessage.style.display = "none";
+
+
+        let valid = true;
+
+
+        /* NAME */
+
+        if (name.value.trim() === "") {
+
+            nameError.textContent =
+                "Please enter your name.";
+
+            valid = false;
+
+        }
+        else if (name.value.trim().length < 3) {
+
+            nameError.textContent =
+                "Name must contain at least 3 characters.";
+
+            valid = false;
+
+        }
+
+
+        /* EMAIL */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (email.value.trim() === "") {
+
+            emailError.textContent =
+                "Please enter your email.";
+
+            valid = false;
+
+        }
+        else if (!emailPattern.test(email.value.trim())) {
+
+            emailError.textContent =
+                "Please enter a valid email address.";
+
+            valid = false;
+
+        }
+
+
+        /* PHONE */
+
+        const phonePattern =
+            /^[0-9]{10}$/;
+
+
+        if (phone.value.trim() === "") {
+
+            phoneError.textContent =
+                "Please enter your phone number.";
+
+            valid = false;
+
+        }
+        else if (!phonePattern.test(phone.value.trim())) {
+
+            phoneError.textContent =
+                "Phone number must contain exactly 10 digits.";
+
+            valid = false;
+
+        }
+
+
+        /* COURSE */
+
+        if (course.value === "") {
+
+            courseError.textContent =
+                "Please select a course.";
+
+            valid = false;
+
+        }
+
+
+        /* MESSAGE */
+
+        if (message.value.trim() === "") {
+
+            messageError.textContent =
+                "Please enter your message.";
+
+            valid = false;
+
+        }
+        else if (message.value.trim().length < 10) {
+
+            messageError.textContent =
+                "Message must contain at least 10 characters.";
+
+            valid = false;
+
+        }
+
+
+        /* SUCCESS */
+
+        if (valid) {
+
+            successMessage.style.display = "block";
+
+            contactForm.reset();
+
+            setTimeout(function () {
+
+                successMessage.style.display = "none";
+
+            }, 5000);
+
+        }
+
+    });
+
+
+    /* =========================================
+       CURRENT YEAR
+    ========================================= */
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+
+</script>
+
+
+</body>
+</html>
+```
